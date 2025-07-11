@@ -2,7 +2,7 @@
 
 Projeto de desenvolvimento do clássico jogo Pac-Man, criado como parte da disciplina de Pensamento Computacional e Algoritmos no curso de Análise e Desenvolvimento de Sitemas no Instituto Federal de Santa Catarina
 
-##
+
 
 📌 **Objetivo**
 
@@ -34,7 +34,7 @@ Desenvolver uma versão funcional do jogo Pac-Man utilizando a linguagem Java, c
 
  ##
 
-🛠️ **Tecnologias Utilizadas**
+**🛠️  Tecnologias Utilizadas**
 
 - Java SE (Java Standard Edition)
 
@@ -43,3 +43,8 @@ Desenvolver uma versão funcional do jogo Pac-Man utilizando a linguagem Java, c
 - Java Swing ou JavaFX para interface gráfica
 
 - Git e GitHub para controle de versão
+
+##
+**📝 Licença**
+
+Este projeto é de uso educacional e não possui fins lucrativos. **Todos os direitos sobre a marca Pac-Man pertencem à Bandai Namco.**
