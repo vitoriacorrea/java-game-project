@@ -40,8 +40,10 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             // Verifica colisão com paredes após mover
             for (Bloco parede : paredes) {
                 if (colisao(this, parede)) {
+                    // Desfaz o movimento se colidir
                     this.x -= this.velocidadeX;
                     this.y -= this.velocidadeY;
+                    // Volta para direção anterior
                     this.direcao = direcaoAnterior;
                     atualizarVelocidade();
                 }
@@ -52,18 +54,18 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         void atualizarVelocidade() {
             if (this.direcao == 'U') {
                 this.velocidadeX = 0;
-                this.velocidadeY = -tamanhoBloco/4;
+                this.velocidadeY = -tamanhoBloco/4;  // Move para cima
             }
             else if (this.direcao == 'D') {
                 this.velocidadeX = 0;
-                this.velocidadeY = tamanhoBloco/4;
+                this.velocidadeY = tamanhoBloco/4;   // Move para baixo
             }
             else if (this.direcao == 'L') {
-                this.velocidadeX = -tamanhoBloco/4;
+                this.velocidadeX = -tamanhoBloco/4;  // Move para esquerda
                 this.velocidadeY = 0;
             }
             else if (this.direcao == 'R') {
-                this.velocidadeX = tamanhoBloco/4;
+                this.velocidadeX = tamanhoBloco/4;   // Move para direita
                 this.velocidadeY = 0;
             }
         }
@@ -76,23 +78,23 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
     }
 
     // Configurações do jogo
-    private int quantidadeLinhas = 21;
-    private int quantidadeColunas = 19;
-    private int tamanhoBloco = 32;
-    private int larguraTabuleiro = quantidadeColunas * tamanhoBloco;
-    private int alturaTabuleiro = quantidadeLinhas * tamanhoBloco;
+    private int quantidadeLinhas = 21;       // Número de linhas no mapa
+    private int quantidadeColunas = 19;      // Número de colunas no mapa
+    private int tamanhoBloco = 32;           // Tamanho de cada bloco em pixels
+    private int larguraTabuleiro = quantidadeColunas * tamanhoBloco;  // Largura total do tabuleiro
+    private int alturaTabuleiro = quantidadeLinhas * tamanhoBloco;    // Altura total do tabuleiro
 
     // Imagens do jogo
-    private Image imagemParede;
-    private Image imagemFantasmaAzul;
-    private Image imagemFantasmaLaranja;
-    private Image imagemFantasmaRosa;
-    private Image imagemFantasmaVermelho;
+    private Image imagemParede;              // Imagem da parede
+    private Image imagemFantasmaAzul;        // Imagem do fantasma azul
+    private Image imagemFantasmaLaranja;     // Imagem do fantasma laranja
+    private Image imagemFantasmaRosa;        // Imagem do fantasma rosa
+    private Image imagemFantasmaVermelho;    // Imagem do fantasma vermelho
 
-    private Image imagemPacmanCima;
-    private Image imagemPacmanBaixo;
-    private Image imagemPacmanEsquerda;
-    private Image imagemPacmanDireita;
+    private Image imagemPacmanCima;          // Imagem do Pac-Man virado para cima
+    private Image imagemPacmanBaixo;         // Imagem do Pac-Man virado para baixo
+    private Image imagemPacmanEsquerda;      // Imagem do Pac-Man virado para esquerda
+    private Image imagemPacmanDireita;       // Imagem do Pac-Man virado para direita
 
     // Mapa do jogo (X = parede, O = vazio, P = Pac-Man, ' ' = comida)
     // Fantasmas: b = azul, o = laranja, p = rosa, r = vermelho
@@ -122,8 +124,8 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
 
     // Conjuntos de elementos do jogo
     HashSet<Bloco> paredes;     // Paredes do labirinto
-    HashSet<Bloco> comidas;      // Pontos/comidas
-    HashSet<Bloco> fantasmas;    // Fantasmas
+    HashSet<Bloco> comidas;     // Pontos/comidas
+    HashSet<Bloco> fantasmas;   // Fantasmas
     Bloco pacman;               // Personagem principal
 
     Timer loopJogo;             // Timer para o loop do jogo
@@ -133,6 +135,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
     int vidas = 3;              // Número de vidas
     boolean jogoTerminado = false;  // Estado do jogo
 
+    // Construtor
     PacMan() {
         setPreferredSize(new Dimension(larguraTabuleiro, alturaTabuleiro));
         setBackground(Color.BLACK);
@@ -229,7 +232,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             g.drawImage(parede.imagem, parede.x, parede.y, parede.largura, parede.altura, null);
         }
 
-        // Desenha as comidas
+        // Desenha as comidas (pontos pequenos)
         g.setColor(Color.WHITE);
         for (Bloco comida : comidas) {
             g.fillRect(comida.x, comida.y, comida.largura, comida.altura);
@@ -251,9 +254,32 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         pacman.x += pacman.velocidadeX;
         pacman.y += pacman.velocidadeY;
 
-        // Verifica colisão com paredes
+        // ==============================================
+        // NOVA FUNCIONALIDADE: ATRAVESSAR AS PAREDES
+        // ==============================================
+        // Verifica se o Pac-Man saiu completamente do mapa pelos lados
+        if (pacman.x + pacman.largura < 0) {
+            // Saiu pela esquerda - aparece na direita
+            pacman.x = larguraTabuleiro;
+        } else if (pacman.x > larguraTabuleiro) {
+            // Saiu pela direita - aparece na esquerda
+            pacman.x = -pacman.largura;
+        }
+
+        // Verifica se o Pac-Man saiu completamente do mapa por cima ou por baixo
+        if (pacman.y + pacman.altura < 0) {
+            // Saiu por cima - aparece em baixo
+            pacman.y = alturaTabuleiro;
+        } else if (pacman.y > alturaTabuleiro) {
+            // Saiu por baixo - aparece em cima
+            pacman.y = -pacman.altura;
+        }
+        // ==============================================
+
+        // Verifica colisão com paredes (apenas depois de verificar os limites do mapa)
         for (Bloco parede : paredes) {
             if (colisao(pacman, parede)) {
+                // Desfaz o movimento se colidir com parede
                 pacman.x -= pacman.velocidadeX;
                 pacman.y -= pacman.velocidadeY;
                 break;
@@ -279,6 +305,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             fantasma.y += fantasma.velocidadeY;
             for (Bloco parede : paredes) {
                 if (colisao(fantasma, parede) || fantasma.x <= 0 || fantasma.x + fantasma.largura >= larguraTabuleiro) {
+                    // Fantasma colidiu com parede - muda de direção
                     fantasma.x -= fantasma.velocidadeX;
                     fantasma.y -= fantasma.velocidadeY;
                     char novaDirecao = direcoes[random.nextInt(4)];
