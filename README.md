@@ -73,7 +73,7 @@ O jogo utiliza **Java Swing**, uma biblioteca gráfica padrão do Java, para:
 ## **🎓 Contexto Acadêmico**  
 
 Este projeto foi desenvolvido como parte do curso de **Análise e Desenvolvimento de Sistemas** no **IFSC - São José**, com o intuito de aplicar conceitos de:  
-- **Programação Orientada a Objetos (POO) ** (classes, herança, polimorfismo).  
+- **Programação Orientada a Objetos (POO)** (classes, herança, polimorfismo).  
 - **Estruturas de Dados** (coleções como `HashSet`).  
 - **Manipulação de Interfaces Gráficas** (Swing).  
 
