@@ -254,9 +254,6 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         pacman.x += pacman.velocidadeX;
         pacman.y += pacman.velocidadeY;
 
-        // ==============================================
-        // NOVA FUNCIONALIDADE: ATRAVESSAR AS PAREDES
-        // ==============================================
         // Verifica se o Pac-Man saiu completamente do mapa pelos lados
         if (pacman.x + pacman.largura < 0) {
             // Saiu pela esquerda - aparece na direita
