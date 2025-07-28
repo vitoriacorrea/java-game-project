@@ -79,6 +79,6 @@ Este projeto foi desenvolvido como parte do curso de **Análise e Desenvolviment
 
 
 
-**👨‍💻 Alunas**: Ana Clara Teixeira Ronzani e Vitória Correa
+**👨‍💻 Alunas**: Ana Ronzani e Vitória Correa
 
 **🏫 Instituição**: Instituto Federal de Santa Catarina - São José  
