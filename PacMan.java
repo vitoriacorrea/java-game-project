@@ -96,7 +96,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
     private Image imagemPacmanEsquerda;      // Imagem do Pac-Man virado para esquerda
     private Image imagemPacmanDireita;       // Imagem do Pac-Man virado para direita
 
-    // Mapa do jogo (X = parede, O = vazio, P = Pac-Man, ' ' = comida)
+    // Mapa do jogo baseado em um mapa de texto (X = parede, O = vazio, P = Pac-Man, ' ' = comida)
     // Fantasmas: b = azul, o = laranja, p = rosa, r = vermelho
     private String[] mapa = {
         "XXXXXXXXXXXXXXXXXXX",
