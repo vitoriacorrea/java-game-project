@@ -1,4 +1,4 @@
-# **Pac-Man em Java**  
+# **🎮 Pac-Man em Java**  
 
 **Objetivo**:  
 Este projeto foi desenvolvido como parte da disciplina de **Algoritmos (ALG)** do curso de **Análise e Desenvolvimento de Sistemas** no **IFSC - Instituto Federal de Santa Catarina, Campus São José**. O objetivo era criar/recriar um jogo clássico (Pac-Man) em **Java**, aplicando conceitos como programação orientada a objetos, estruturas de dados e manipulação de interfaces gráficas.  
@@ -82,3 +82,4 @@ Este projeto foi desenvolvido como parte do curso de **Análise e Desenvolviment
 **👨‍💻 Alunas**: Ana Ronzani e Vitória Correa
 
 **🏫 Instituição**: Instituto Federal de Santa Catarina - São José  
+**📚 Notion**: https://www.notion.so/Trabalho-Java-Pac-Woman-6e855b5cb52b4f7f8a1f511583257e5e
