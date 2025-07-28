@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.util.HashSet;
 import java.util.Random;
 import javax.swing.*;
-
+// Classe principal que herda o Jpanel e implementa a logica grafica, o controle do teclado e o loop do jogo
 public class PacMan extends JPanel implements ActionListener, KeyListener {
     // Classe interna para representar qualquer bloco/entidade do jogo
     class Bloco {
@@ -135,7 +135,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
     int vidas = 3;              // Número de vidas
     boolean jogoTerminado = false;  // Estado do jogo
 
-    // Construtor
+    // Construtor define o tamanho da tela, carrega imagens dos personagens, inicia o timer
     PacMan() {
         setPreferredSize(new Dimension(larguraTabuleiro, alturaTabuleiro));
         setBackground(Color.BLACK);
@@ -211,7 +211,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             }
         }
     }
-
+    // Desenha as imagens do pacman, fantasmas e paredes
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         desenhar(g);
@@ -248,7 +248,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         }
     }
 
-    // Atualiza a lógica do jogo
+    // Atualiza a lógica de movimentação do jogo, anda conforme a tecla pressionada, é bloqueado por paredes, se encostar em um fantasma perde vida
     public void mover() {
         // Move o Pac-Man
         pacman.x += pacman.velocidadeX;
