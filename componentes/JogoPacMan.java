@@ -84,7 +84,7 @@ public class JogoPacMan extends JPanel implements ActionListener, KeyListener {
     private Image imgParede;
     private Image imgFantasmaAzul;
     private Image imgFantasmaLaranja;
-    private Image imgFantasmaRosa;
+    private Image imgFantasmaAmarelo;
     private Image imgFantasmaVermelho;
 
     private Image imgPacManCima;
@@ -93,7 +93,7 @@ public class JogoPacMan extends JPanel implements ActionListener, KeyListener {
     private Image imgPacManDireita;
 
     // Mapa do jogo (X = Parede, O = Vazio, P = Pac-Man, ' ' = Comida)
-    // Fantasmas: b = Azul, o = Laranja, p = Rosa, r = Vermelho
+    // Fantasmas: b = Azul, o = Laranja, p = amarelo, r = Vermelho
     private String[] mapa = {
         "XXXXXXXXXXXXXXXXXXX",
         "X        X        X",
@@ -143,7 +143,7 @@ public class JogoPacMan extends JPanel implements ActionListener, KeyListener {
         imgParede = new ImageIcon(getClass().getResource("./Parede.png")).getImage();
         imgFantasmaAzul = new ImageIcon(getClass().getResource("./FantasmaAzul.png")).getImage();
         imgFantasmaLaranja = new ImageIcon(getClass().getResource("./FantasmaLaranja.png")).getImage();
-        imgFantasmaRosa = new ImageIcon(getClass().getResource("./FantasmaRosa.png")).getImage();
+        imgFantasmaAmarelo = new ImageIcon(getClass().getResource("./FantasmaRosa.png")).getImage();
         imgFantasmaVermelho = new ImageIcon(getClass().getResource("./FantasmaVermelho.png")).getImage();
 
         imgPacManCima = new ImageIcon(getClass().getResource("./pacmanCima.png")).getImage();
@@ -188,7 +188,7 @@ public class JogoPacMan extends JPanel implements ActionListener, KeyListener {
                     Bloco fantasma = new Bloco(imgFantasmaLaranja, x, y, tamanhoBloco, tamanhoBloco);
                     fantasmas.add(fantasma);
                 } else if (caractere == 'p') {  // Fantasma Rosa
-                    Bloco fantasma = new Bloco(imgFantasmaRosa, x, y, tamanhoBloco, tamanhoBloco);
+                    Bloco fantasma = new Bloco(imgFantasmaAmarelo, x, y, tamanhoBloco, tamanhoBloco);
                     fantasmas.add(fantasma);
                 } else if (caractere == 'r') {  // Fantasma Vermelho
                     Bloco fantasma = new Bloco(imgFantasmaVermelho, x, y, tamanhoBloco, tamanhoBloco);
