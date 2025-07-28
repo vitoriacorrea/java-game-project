@@ -79,7 +79,6 @@ Este projeto foi desenvolvido como parte do curso de **Análise e Desenvolviment
 
 
 
-**👨‍💻 Alunas**: Ana Ronzani e Vitória Correa
-
+**👨‍💻 Alunas**: Ana Ronzani e Vitória Correa                                                 
 **🏫 Instituição**: Instituto Federal de Santa Catarina - São José  
 **📚 Notion**: https://www.notion.so/Trabalho-Java-Pac-Woman-6e855b5cb52b4f7f8a1f511583257e5e
