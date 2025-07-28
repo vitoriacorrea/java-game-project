@@ -34,7 +34,7 @@ Este projeto foi desenvolvido como parte da disciplina de **Algoritmos (ALG)** d
 1. **Clone o repositório** (ou baixe os arquivos `.java` e todas as imagens):  
    ```bash
    git clone https://github.com/vitoriacorrea/java-game-project.git
-   cd pacman-java
+   cd java-game-project
    ```
 
 2. **Compile e execute o jogo**:  
