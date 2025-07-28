@@ -1,51 +1,84 @@
-# 🕹️ **Pac-Man em Java**
+# **Pac-Man em Java**  
 
-Projeto de desenvolvimento do clássico jogo Pac-Man, criado como parte da disciplina de Pensamento Computacional e Algoritmos no curso de Análise e Desenvolvimento de Sitemas no Instituto Federal de Santa Catarina
+**Objetivo**:  
+Este projeto foi desenvolvido como parte da disciplina de **Algoritmos (ALG)** do curso de **Análise e Desenvolvimento de Sistemas** no **IFSC - Instituto Federal de Santa Catarina, Campus São José**. O objetivo era criar/recriar um jogo clássico (Pac-Man) em **Java**, aplicando conceitos como programação orientada a objetos, estruturas de dados e manipulação de interfaces gráficas.  
 
-##
 
-## 📌 **Objetivo**
+## **📌 Sobre o Código**  
 
-Desenvolver uma versão funcional do jogo Pac-Man utilizando a linguagem Java, com foco em:
+### **🔹 Tecnologias e Bibliotecas Utilizadas**  
+- **Linguagem**: Java (JDK 8+)  
+- **Interface Gráfica**: **Java Swing** (para renderização e janelas)  
+- **Estruturas de Dados**: `HashSet` (para armazenar paredes, comidas e fantasmas)  
+- **Tratamento de Inputs**: `KeyListener` (para capturar teclas do teclado)  
+- **Game Loop**: `Timer` (para atualização e renderização do jogo)  
 
-- Prática de lógica de programação orientada a objetos
+### **🔹 Funcionalidades Implementadas**  
+✅ **Movimentação do Pac-Man** (setas do teclado: ↑, ↓, ←, →)  
+✅ **Colisões com paredes e fantasmas**  
+✅ **Sistema de pontuação** (coletar comidas = +10 pontos)  
+✅ **Vidas do jogador** (3 vidas, game over ao perder todas)  
+✅ **Geração aleatória de movimentos dos fantasmas**  
+✅ **Reinício automático do jogo** (quando todas as comidas são coletadas ou game over)  
 
-- Estruturas de controle e manipulação de eventos
 
-- Desenvolvimento de interface gráfica com Java
 
-- Implementação de regras de jogo, colisões e IA básica para apoio
+## **🎮 Como Executar**  
 
-##
+### **Pré-requisitos**  
+- Java JDK 8+ instalado  
+- Git (opcional, para clonar o repositório) 
+- Você também pode instalar em ZIP e extrair no vscode 
 
-## 🧩 **Funcionalidades**
+### **Passos**  
+1. **Clone o repositório** (ou baixe os arquivos `.java` e todas as imagens):  
+   ```bash
+   git clone https://github.com/vitoriacorrea/java-game-project.git
+   cd pacman-java
+   ```
 
-- Movimento do Pac-Man com as teclas WASD
+2. **Compile e execute o jogo**:  
+   ```bash
+   javac App.java PacMan.java
+   java App
+   ```
 
-- Mapa labiríntico com pellets e power-ups
 
-- Fantasmas com comportamentos diferentes (caça e fuga)
+## **🖥️ Interface Gráfica (Swing)**  
 
-- Sistema de pontuação
+O jogo utiliza **Java Swing**, uma biblioteca gráfica padrão do Java, para:  
+- Criar a janela do jogo (`JFrame`).  
+- Renderizar sprites (`JPanel` + `Graphics`).  
+- Gerenciar eventos de teclado (`KeyListener`).  
 
-- Tela de vitória ou derrota
+### **Pontos Importantes da Implementação**  
+- **`Block` (Bloco)**: Classe interna que representa qualquer elemento do jogo (Pac-Man, fantasmas, paredes, comidas).  
+- **`HashSet`**: Usado para armazenar e iterar eficientemente sobre paredes, comidas e fantasmas.  
+- **Game Loop (`Timer`)**: Atualiza a lógica do jogo e redesenhos a cada **50ms (20 FPS)**.  
+- **Colisões**: Verificadas manualmente (sem engines de física).  
 
-- Sons e efeitos visuais básicos
 
- ##
+## **📝 Observações Interessantes**  
 
-## 🛠️  **Tecnologias Utilizadas**
+- **Imagens Necessárias**: O jogo espera arquivos `.png` na mesma pasta (ex: `wall.png`, `blueGhost.png`, etc.).  
+- **Melhorias Possíveis**:  
+  - Adicionar menus (início, pausa).  
+  - Implementar IA básica para os fantasmas.  
+  - Usar JavaFX para gráficos mais fluidos.  
+  - Corrigir bugs da parede
+  - Implementar a cereja para fortalecimento do PacMan
 
-- Java SE (Java Standard Edition)
 
-- IDE: a definir
-  
-- Java Swing ou JavaFX para interface gráfica
 
-- Git e GitHub para controle de versão
+## **🎓 Contexto Acadêmico**  
 
-##
+Este projeto foi desenvolvido como parte do curso de **Análise e Desenvolvimento de Sistemas** no **IFSC - São José**, com o intuito de aplicar conceitos de:  
+- **Programação Orientada a Objetos (POO) ** (classes, herança, polimorfismo).  
+- **Estruturas de Dados** (coleções como `HashSet`).  
+- **Manipulação de Interfaces Gráficas** (Swing).  
 
-## **📝 Licença**
 
-Este projeto é de uso educacional e não possui fins lucrativos. **Todos os direitos sobre a marca Pac-Man pertencem à Bandai Namco.**
+
+**👨‍💻 Alunas**: Ana Clara Teixeira Ronzani e Vitória Correa
+
+**🏫 Instituição**: Instituto Federal de Santa Catarina - São José  
